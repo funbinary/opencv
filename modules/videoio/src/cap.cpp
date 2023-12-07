@@ -116,6 +116,7 @@ bool VideoCapture::open(const String& filename, int apiPreference, const std::ve
     }
 
     const VideoCaptureParameters parameters(params);
+    // 获取可用的后端
     const std::vector<VideoBackendInfo> backends = cv::videoio_registry::getAvailableBackends_CaptureByFilename();
     for (size_t i = 0; i < backends.size(); i++)
     {
